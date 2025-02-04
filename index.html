@@ -294,6 +294,10 @@
       background-color: var(--main-bg-color-light);
     }
 
+    .podcast iframe {
+      width: 85%;
+      height: 50rem;
+    }
 
     .podcast-box {
       display: grid;
@@ -548,10 +552,6 @@
       grid-column: 1/-1;
     }
 
-    iframe {
-      width: 85%;
-      height: 50rem;
-    }
 
     /**************************/
     /* ANIMATIONS */
@@ -799,11 +799,28 @@
       }
 
       /* PODCAST SECTION */
+      .podcast iframe {
+        width: 100%;
+        height: 20rem;
+      }
+
       .podcast-box {
 
         grid-template-columns: 5rem 1fr;
-        column-gap: 2rem;
-        font-size: 1.45rem;
+        column-gap: 4rem;
+        font-size: 2rem;
+      }
+
+      .episode-number svg {
+        height: 8rem;
+      }
+
+      .episode-btns {
+        flex-direction: column;
+      }
+
+      .episode-btns li:nth-child(3) {
+        display: none;
       }
 
     }
