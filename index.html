@@ -1,0 +1,1489 @@
+<!DOCTYPE html>
+<html lang="he">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon"
+    href="https://www.shibolet.com/wp-content/uploads/2024/06/cropped-cropped-Shibolet_favicon-2-32x32.png"
+    sizes="32x32">
+
+  <link rel="icon"
+    href="https://www.shibolet.com/wp-content/uploads/2024/06/cropped-cropped-Shibolet_favicon-2-192x192.png"
+    sizes="192x192">
+
+  <link rel="apple-touch-icon"
+    href="https://www.shibolet.com/wp-content/uploads/2024/06/cropped-cropped-Shibolet_favicon-2-180x180.png">
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap" rel="stylesheet">
+
+  <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>
+
+  <script nomodule="" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"></script>
+
+  <script src="https://kit.fontawesome.com/24183e47a8.js" crossorigin="anonymous"></script>
+
+  <script defer src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"></script>
+
+  <script defer src="https://marketing.shibolet.com/wp-content/uploads/file_uploads/script.js"></script>
+
+  <title>הבמה שלכם</title>
+  <style>
+    /* 
+--- TYPOGRAPHY SYSTEM
+- Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+--- WHITESPACE
+- Spacing system (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+*/
+
+    @font-face {
+      font-family: 'FBOxford-Black';
+      src:
+        url('https://go.shibolet.com/l/793453/2025-02-03/47yllw/793453/17385899572fbsZIpi/fboxford_blackwebfont.woff') format('woff'),
+        url('https://go.shibolet.com/l/793453/2025-02-03/47ylls/793453/1738589957bUtlUBVH/fboxford_blackwebfont.ttf') format('truetype');
+      font-weight: bold;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'FBOxford-Regular';
+      src:
+        url('https://go.shibolet.com/l/793453/2025-02-04/47yp33/793453/1738662526SMOWZrJl/fboxford_regularwebfont.woff') format('woff'),
+        url('https://go.shibolet.com/l/793453/2025-02-04/47yp2w/793453/1738662516t4g8o6oO/fboxford_regularwebfont.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    :root {
+      --main-color: #00b388;
+      --main-bg-color-light: #f5f5f5;
+      --main-bg-color-dark: #111617;
+      --main-text-color-dark: #fff;
+      --main-text-color-light: #000;
+    }
+
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 62.5%;
+      overflow-x: hidden;
+      /* scroll-behavior: smooth; */
+    }
+
+    body {
+      font-family: "Heebo", sans-serif;
+      line-height: 1;
+      font-weight: 400;
+      overflow-x: hidden;
+      direction: rtl;
+    }
+
+    .heading-primary {
+      font-size: 6.4rem;
+      text-transform: uppercase;
+    }
+
+    .heading-secondary {
+      font-size: 4.4rem;
+      line-height: 1.2;
+      text-transform: uppercase;
+      margin-bottom: 9.6rem;
+      color: inherit;
+    }
+
+    .btn:link,
+    .btn:visited {
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 1.8rem;
+      color: inherit;
+    }
+
+
+    .container {
+      max-width: 120rem;
+      padding: 0 3.2rem;
+      margin: 0 auto;
+    }
+
+    .font-light {
+      font-weight: 300;
+    }
+
+    .font-medium {
+      font-weight: 500;
+    }
+
+    /**************************/
+    /* HEADER */
+    /**************************/
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: var(--main-bg-color-light);
+
+      /* Because we want header to be sticky later */
+      height: 9.6rem;
+      padding: 0 6.4rem;
+      position: relative;
+    }
+
+    .logo {
+      height: 3rem;
+    }
+
+    section {
+      padding: 9.6rem 0 9.6rem 0;
+
+    }
+
+    /**************************/
+    /* NAVIGATION */
+    /**************************/
+
+    .main-nav-list {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 4.8rem;
+    }
+
+    .main-nav-link:link,
+    .main-nav-link:visited {
+      display: inline-block;
+      text-decoration: none;
+      color: inherit;
+      text-transform: uppercase;
+      font-size: 1.4rem;
+      font-weight: 300;
+      transition: all 0.2s;
+    }
+
+    .main-nav-link:hover:not(.btn-cta),
+    .main-nav-link:active:not(.btn-cta) {
+      color: var(--main-color);
+      transform: translateY(-2px);
+    }
+
+    .buttons {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .btn-cta:link,
+    .btn-cta:visited {
+      background-color: var(--main-color);
+      border: 1px solid var(--main-color);
+      padding: 1rem 2rem;
+    }
+
+    .btn-cta:hover,
+    .btn-cta:active {
+      color: var(--main-color);
+      background-color: transparent;
+      font-weight: 500;
+    }
+
+    /* MOBILE */
+    .btn-mobile-nav {
+      border: none;
+      background: none;
+      cursor: pointer;
+      color: var(--main-color);
+      display: none;
+    }
+
+    .icon-mobile-nav {
+      height: 4.8rem;
+      width: 4.8rem;
+      color: inherit;
+    }
+
+    .icon-mobile-nav[name="close-outline"] {
+      display: none;
+    }
+
+    /* STICKY NAVIGATION */
+    .sticky .header {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      height: 9.6rem;
+      padding-top: 0;
+      padding-bottom: 0;
+      z-index: 999;
+      background-color: #f5f5f5;
+      box-shadow: 0 1.2rem 3.2rem rgba(0, 0, 0, 0.03);
+    }
+
+    /**************************/
+    /* HERO SECTION */
+    /**************************/
+
+    .hero-title-box {
+      position: relative;
+      margin-bottom: 4.8rem;
+    }
+
+    .main-heading-box {
+      position: absolute;
+    }
+
+    .main-heading {
+      font-family: 'FBOxford-Black', "Heebo", sans-serif;
+      font-size: 14rem;
+    }
+
+    .main-heading span {
+      color: var(--main-color);
+
+    }
+
+    .main-heading-box .subtitle {
+      font-size: 3rem;
+    }
+
+    .hero-description {
+      display: grid;
+      grid-template-columns: 1fr 40rem;
+      gap: 4rem;
+    }
+
+
+    .hero-description .text-box {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      justify-content: center;
+
+    }
+
+
+    .hero-description .text-box p {
+      font-size: 1.45rem;
+      text-align: justify;
+      line-height: 1.3;
+
+    }
+
+    .hero-description .text-box p:last-child {
+      letter-spacing: 0.5px;
+    }
+
+    /**************************/
+    /* PODCAST SECTION */
+    /**************************/
+
+    .podcast:nth-child(even) {
+      background-color: var(--main-bg-color-light);
+    }
+
+
+    .podcast-box {
+      display: grid;
+      grid-template-columns: 10rem 1fr;
+      column-gap: 2rem;
+      font-size: 1.45rem;
+    }
+
+    .episode-details {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .episode-title {
+      font-size: 3rem;
+      font-weight: 500;
+      word-spacing: 4px;
+    }
+
+    .episode-description {
+      font-weight: 300;
+      line-height: 1.5;
+    }
+
+    .episode-btns {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+      font-size: 2rem;
+      font-weight: 400;
+      margin: 2rem 0;
+    }
+
+    .episode-btn:link,
+    .episode-btn:visited {
+
+      text-decoration: none;
+      color: inherit;
+      transition: all 1s;
+    }
+
+    .episode-btn:hover,
+    .episode-btn:active {
+      border-bottom: 1px solid;
+    }
+
+    .podcast-icon {
+      background-color: #000;
+      padding: 0.4rem;
+      color: #fff;
+      border-radius: 7px;
+      font-size: 1.5rem;
+    }
+
+    .dark-green .color {
+      color: #00b388;
+    }
+
+    .light-green .color {
+      color: #a4d65e;
+    }
+
+    .deep-blue .color {
+      color: #20cbd4;
+    }
+
+    .powder-blue .color {
+      color: #92c1e9;
+    }
+
+    .green-blue .color {
+      color: #008c95;
+    }
+
+    .episode-number svg {
+      height: 10rem;
+    }
+
+    /**************************/
+    /* TEAM SECTION */
+    /**************************/
+    .interns {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 8rem;
+    }
+
+    .intern {
+      font-size: 1.45rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .img-box {
+      position: relative;
+
+    }
+
+    .img-box img {
+      border-radius: 1000px;
+      border: solid 6px #fff;
+      width: 100%;
+    }
+
+    .img-box .circle {
+      position: absolute;
+    }
+
+
+    .intern:nth-child(1) .circle,
+    .intern:nth-child(10) .circle {
+      fill: var(--main-color);
+    }
+
+    .intern:nth-child(2) .circle,
+    .intern:nth-child(9) .circle {
+      fill: #a4d65e;
+    }
+
+    .intern:nth-child(3) .circle,
+    .intern:nth-child(8) .circle {
+      fill: #20cbd4;
+    }
+
+    .intern:nth-child(4) .circle,
+    .intern:nth-child(7) .circle {
+      fill: #92c1e9;
+    }
+
+    .intern:nth-child(5) .circle,
+    .intern:nth-child(6) .circle {
+      fill: #008c95;
+    }
+
+
+    .intern-name {
+      font-weight: 600;
+      font-size: 1.6rem;
+    }
+
+
+    /**************************/
+    /* footer */
+    /**************************/
+    footer {
+      padding: 9.8rem 0;
+      background-color: var(--main-bg-color-light);
+    }
+
+    .info {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      row-gap: 4rem;
+    }
+
+    address {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-top: 2rem;
+    }
+
+    .footer-link:link,
+    .footer-link:visited {
+      text-decoration: none;
+      color: inherit;
+      font-style: normal;
+      font-size: 1.3rem;
+      line-height: 1.5;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    address ion-icon {
+      font-size: 1.6rem;
+    }
+
+    .footer-map {
+      width: 100%;
+    }
+
+    .footer-btn:link,
+    .footer-btn:visited {
+      grid-column: 1/-1;
+      background-color: var(--main-color);
+      border: var(--main-color) 1px solid;
+      padding: 1rem;
+      text-align: center;
+      font-size: 1.8rem;
+      text-decoration: none;
+      color: inherit;
+      text-transform: uppercase;
+      transition: all 0.5s;
+    }
+
+    .footer-btn:hover,
+    .footer-btn:active {
+      background-color: transparent;
+      color: var(--main-color);
+    }
+
+    .social-links {
+      list-style: none;
+      grid-column: 1/-1;
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+    }
+
+    .social-link a:link,
+    .social-link a:visited {
+      display: flex;
+      align-content: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      text-transform: capitalize;
+      font-size: 1.3rem;
+      color: inherit;
+      transition: all 0.5s;
+    }
+
+    .social-link a:hover,
+    .social-link a:active {
+      color: var(--main-color);
+    }
+
+    body.dark .credit,
+    body.dark .credit-link:link,
+    body.dark .credit-link:visited {
+      color: #d4d2d2;
+    }
+
+    body.light .credit,
+    body.light .credit-link:link,
+    body.light .credit-link:visited {
+
+      color: #565656;
+    }
+
+    .copyright {
+      font-size: 1.2rem;
+    }
+
+    .credit,
+    .copyright {
+      text-align: center;
+      grid-column: 1/-1;
+    }
+
+    iframe {
+      width: 85%;
+      height: 50rem;
+    }
+
+    /**************************/
+    /* ANIMATIONS */
+    /**************************/
+
+    .text-focus-in {
+      -webkit-animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+      animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+    }
+
+    @-webkit-keyframes text-focus-in {
+      0% {
+        -webkit-filter: blur(12px);
+        filter: blur(12px);
+        opacity: 0;
+      }
+
+      100% {
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+        opacity: 1;
+      }
+    }
+
+    @keyframes text-focus-in {
+      0% {
+        -webkit-filter: blur(12px);
+        filter: blur(12px);
+        opacity: 0;
+      }
+
+      100% {
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+        opacity: 1;
+      }
+    }
+
+    /* Common styles for hidden elements */
+    .hidden {
+      opacity: 0;
+      transform: translateY(20px);
+      /* or any initial position for the animation */
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    /* When element is in view, apply these styles */
+    .show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Example specific styles for different sections */
+    .text-focus-in {
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .hero-text-box {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .hero-text-box.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .img-box {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .img-box.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* rem and em do NOT depend on html font-size in media queries! Instead, 1rem = 1em = 16px */
+
+    /**************************/
+    /* BELOW 1344px (Smaller desktops) */
+    /**************************/
+
+    @media (max-width: 84em) {
+      .hero {
+        max-width: 120rem;
+      }
+
+      .container,
+      .hero,
+      .header {
+        padding: 0 5rem;
+      }
+
+      .heading-primary {
+        font-size: 4.4rem;
+      }
+
+      .event-sub-heading {
+        font-size: 2.8rem;
+        text-shadow: 1px 1px 2px #000;
+      }
+    }
+
+    /**************************/
+    /* BELOW 1200px (Landscape Tablets) */
+    /**************************/
+
+    @media (max-width: 75em) {
+      html {
+        /* 9px / 16px  */
+        font-size: 56.25%;
+      }
+    }
+
+    /**************************/
+    /* BELOW 1034px (Tablets) */
+    /**************************/
+
+    @media (max-width: 65em) {
+      html {
+        /* 8px / 16px = 0.5 = 50% */
+        font-size: 50%;
+      }
+
+      /* MOBILE NAVIGATION */
+      .btn-mobile-nav {
+        color: #000;
+        display: block;
+        z-index: 9999;
+      }
+
+      .main-nav {
+        background-color: inherit;
+        z-index: 1000;
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(10px);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        transform: translateX(100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.5s ease-in;
+
+        /* Hide navigation */
+        /* Allows NO transitions at all */
+        /* display: none; */
+
+        /* 1) Hide it visually */
+        opacity: 0;
+
+        /* 2) Make it unaccessible to mouse and keyboard */
+        pointer-events: none;
+
+        /* 3) Hide it from screen readers */
+        visibility: hidden;
+      }
+
+      .nav-open .main-nav {
+        opacity: 1;
+        pointer-events: auto;
+        visibility: visible;
+        transform: translateX(0);
+      }
+
+      .nav-open .icon-mobile-nav[name="close-outline"] {
+        display: block;
+      }
+
+      .nav-open .icon-mobile-nav[name="menu-outline"] {
+        display: none;
+      }
+
+      .main-nav-list {
+        flex-direction: column;
+        gap: 4.8rem;
+      }
+
+      .main-nav-link:link,
+      .main-nav-link:visited {
+        font-size: 3rem;
+      }
+
+      .header-cta:link,
+      .main-nav-link:visited {
+        display: none;
+      }
+    }
+
+    /**************************/
+    /* BELOW 911px (Smaller tablets) */
+    /**************************/
+
+    @media (max-width: 56em) {
+
+      .linkedin-link {
+        font-size: 3rem;
+      }
+
+    }
+
+    /**************************/
+    /* BELOW 704px (Smaller tablets) */
+    /**************************/
+    @media (max-width: 44em) {
+
+      /* HERO SECTION */
+      .section-hero {
+        padding: 4.8rem 0;
+      }
+
+      .main-heading-box {
+        position: relative;
+      }
+
+      .main-heading-box .subtitle {
+        font-size: 3rem;
+      }
+
+      .main-heading {
+        line-height: 0.75;
+        font-size: 10rem;
+        margin-bottom: 3rem;
+      }
+
+      .hero-image {
+        position: absolute;
+        bottom: 7rem;
+      }
+
+      .hero-description {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .hero-description .text-box p {
+        font-size: 2rem;
+
+      }
+
+      /* PODCAST SECTION */
+      .podcast-box {
+
+        grid-template-columns: 5rem 1fr;
+        column-gap: 2rem;
+        font-size: 1.45rem;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <a href="https://www.shibolet.com/">
+      <svg class="logo header-logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        id="Layer_1" x="0px" y="0px" viewBox="0 0 310 60" style="enable-background:new 0 0 310 60;"
+        xml:space="preserve">
+        <path
+          d="M255.51,21.64h-12.48v-5.18h12.48V21.64z M243.03,8.33h20.89V3.15h-20.89V8.33z M288.41,56.85h1.25V50.9h0.02l2.08,5.96 h1.08l2.08-5.96h0.02v5.96h1.25v-7.72h-1.83l-2.02,6.04h-0.02l-2.07-6.04h-1.85V56.85z M268.64,52.65h2.16 c0.42,0,0.74-0.1,0.96-0.31c0.22-0.21,0.33-0.51,0.33-0.93c0-0.24-0.04-0.44-0.11-0.6c-0.07-0.15-0.17-0.28-0.29-0.36 c-0.12-0.09-0.26-0.14-0.42-0.17c-0.16-0.03-0.32-0.04-0.49-0.04h-2.14V52.65z M267.32,49.14h3.59c0.83,0,1.45,0.18,1.86,0.55 c0.42,0.37,0.62,0.88,0.62,1.53c0,0.37-0.05,0.67-0.16,0.91c-0.11,0.24-0.23,0.44-0.37,0.58c-0.14,0.15-0.28,0.25-0.42,0.32 c-0.14,0.07-0.24,0.11-0.3,0.13v0.02c0.11,0.02,0.23,0.05,0.36,0.11c0.13,0.06,0.25,0.15,0.36,0.27c0.11,0.13,0.21,0.29,0.28,0.49 c0.07,0.2,0.11,0.45,0.11,0.76c0,0.45,0.03,0.87,0.1,1.24c0.07,0.37,0.17,0.64,0.31,0.79h-1.41c-0.1-0.17-0.16-0.35-0.17-0.55 c-0.02-0.2-0.03-0.4-0.03-0.58c0-0.35-0.02-0.66-0.06-0.91c-0.04-0.26-0.12-0.47-0.23-0.64c-0.11-0.17-0.26-0.29-0.46-0.37 c-0.19-0.08-0.44-0.12-0.74-0.12h-1.94v3.18h-1.32V49.14z M250.69,56.85h1.32v-7.72h-1.32V56.85z M230.75,49.14h5.19v1.17h-3.87 v2.02h3.4v1.1h-3.4v3.43h-1.32V49.14z M191.73,56.85h1.36l1.54-5.9h0.02l1.51,5.9h1.34l2.07-7.72h-1.34l-1.4,5.9h-0.02l-1.47-5.9 h-1.35l-1.52,5.9h-0.02l-1.36-5.9h-1.34L191.73,56.85z M171.57,53.78h2.29l-1.12-3.32h-0.03L171.57,53.78z M172.04,49.14h1.4 l2.89,7.72h-1.41l-0.7-2.04h-3l-0.7,2.04h-1.36L172.04,49.14z M150.13,56.85h5.14v-1.17h-3.82v-6.55h-1.32V56.85z M23.22,19.06 c-1.96-1.89-4.47-2.58-6.88-3.04c-0.4-0.08-0.81-0.15-1.21-0.22c-1.46-0.26-2.83-0.5-4.08-0.97c-1.05-0.4-2.3-1.21-2.3-2.87 c0-2.14,2.26-3.64,5.51-3.64c2.46,0,4.69,0.84,5.83,2.19l1.65,1.96l3.82-3.38l-1.65-1.96c-2.1-2.5-5.7-3.99-9.64-3.99 C8.14,3.15,3.7,6.86,3.7,11.96c0,3.52,2.1,6.4,5.6,7.73c1.67,0.63,3.34,0.93,4.95,1.21l0.1,0.02c0.35,0.06,0.7,0.12,1.05,0.19 c1.55,0.3,3.29,0.7,4.35,1.72c0.85,0.83,1.31,1.88,1.21,2.82c-0.32,3.02-4.19,4.12-6.72,4.12v5.18c5.2,0,11.09-2.73,11.73-8.74 C26.26,23.63,25.25,21.02,23.22,19.06 M181.1,19.05h-5.04c0-5.91-4.68-10.72-10.44-10.72s-10.44,4.81-10.44,10.72 c0,5.91,4.68,10.72,10.44,10.72v5.18c-8.54,0-15.49-7.13-15.49-15.9c0-8.77,6.95-15.9,15.49-15.9S181.1,10.28,181.1,19.05 M202.94,34.95c-1.39,0-2.52-1.16-2.52-2.59V3.15h5.04v26.63h15.85v5.18H202.94z M66.47,3.15v31.8h-5.04V21.64H45.35v-5.18h16.08 V3.15H66.47z M126.64,17.54c1.14-1.56,1.76-3.44,1.76-5.39c0-4.96-3.93-9-8.76-9h-9.48v5.18h9.48c2.05,0,3.72,1.71,3.72,3.82 s-1.67,3.82-3.72,3.82h-9.48v5.18h11.4c2.32,0,4.2,1.93,4.2,4.32c0,2.38-1.89,4.31-4.2,4.31h-11.4v5.18h11.4 c5.1,0,9.24-4.26,9.24-9.49C130.81,22.26,129.23,19.29,126.64,17.54 M90.84,3.15H85.8v31.8h5.04V3.15z M281.09,8.33h25.21V3.15 h-25.21V8.33z M296.21,34.95h-5.04V13.5h5.04V34.95z M243.03,34.95h20.89v-5.18h-20.89V34.95z">
+        </path>
+      </svg>
+    </a>
+
+    <nav class="main-nav">
+      <menu class="main-nav-list">
+        <li><a class="main-nav-link" href="#">על שבלת</a></li>
+        <li><a class="main-nav-link" href="#speakers">צוות</a></li>
+        <li><a class="main-nav-link" href="#schedule">התמחות</a></li>
+        <li><a class="main-nav-link" href="#schedule">קריירה</a></li>
+        <li><a class="main-nav-link" href="#schedule">מדיה</a></li>
+      </menu>
+    </nav>
+
+    <div class="buttons">
+
+      <a class="main-nav-link btn-cta header-cta" href="#cta">הרשמה לניוזלטר</a>
+      <button class="btn-mobile-nav">
+        <ion-icon class="icon-mobile-nav" name="menu-outline"></ion-icon>
+        <ion-icon class="icon-mobile-nav" name="close-outline"></ion-icon>
+      </button>
+    </div>
+
+
+  </header>
+  <main>
+    <section class="section-hero">
+      <div class="container">
+        <div class="hero-title-box">
+          <div class="main-heading-box">
+            <h1 class="main-heading">הבמה <span>שלכם</span></h1>
+            <p class="subtitle">
+              ״המתמחים״ | סדרת פרקים עם המתמחים.ות של שבלת
+            </p>
+          </div>
+          <svg class="hero-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1488 334.69">
+            <g>
+              <path
+                d="M496.24,84.68c-10.07-5.8-20.13-11.63-30.19-17.46-1.33-.77-2.84-1.4-3.88-2.46-.74-.76-1.42-2.41-1.07-3.19.44-.98,1.96-1.49,3.07-2.24,3.87,2.05,7.4,3.74,10.75,5.72,8.18,4.83,16.38,9.65,24.34,14.82,1.75,1.13,4.04,4.58,3.51,5.49-2.04,3.56-4.42.55-6.55-.68ZM499.05,90.76c-1.54-.96-3.07-1.94-4.63-2.87-6.14-3.63-12.27-7.27-18.43-10.87-5.31-3.11-10.59-6.28-16.04-9.14-.98-.52-2.69.35-4.06.57.29,1.36.25,2.95.96,4.03.72,1.09,2.13,1.79,3.34,2.48,6.45,3.69,12.94,7.3,19.39,10.98,4.49,2.57,8.91,5.28,13.43,7.8,2.17,1.21,4.08.98,6.04-2.99ZM1487.84,295.36v.02c.28,0,.14,0,0-.02ZM608.83,294.97c110.04.48,768.97.32,879.01.41v5c-56.22.02-851.1-.27-918.72-.84-23.93-.2-44.82-1.71-68.75-2.47-24.85-.79-47.02,6.29-66.74,21.77-6.95,5.45-14.99,10.15-23.28,13.13-13.71,4.94-27.51,2.91-40.27-4.2-6.01-3.35-9.34-8.64-9.45-15.85-.02-1.53-1.44-3.64-2.82-4.46-6.05-3.59-12.64-2.8-18.79-.64-9.93,3.49-19.48,8.06-29.43,11.45-7.39,2.52-15.08,4.74-22.81,5.59-12.47,1.38-24.4-3.24-30.18-16.03-1.22-2.7-2.62-4.1-4.71-4.72-.61,0-1.23,0-1.88,0-60.02.08-189.6.16-249.62.24H.41c-.08-1.68.11-3.01,0-5.19h252.24c1.71-6.72,2.51-12.79,4.81-18.22,4.78-11.3,13.16-18.81,25.79-20.46,5.16-.67,9.99.43,12.66,5.48.67,1.26.05,3.21.02,4.84-1.45-.48-3.29-.56-4.28-1.51-3.89-3.75-7.63-4.77-12.51-2.65-12.43,5.42-18.58,15.34-19.93,28.47-.1.93,1.48,2.97,2.13,2.91,13.27-1.31,26.58-2.4,39.73-4.49,10.85-1.73,14.58-10.89,17.8-19.91,3.53-9.89,6.94-19.82,10.23-29.8.77-2.33.57-4.97,1.26-7.34,1.07-3.7,2.4-7.34,3.87-10.91.74-1.79,1.99-3.38,3.08-5.02,1.64-2.47,1.89-4.72-.21-7.22-5.05-6.03-4.97-12.53-1.27-19.2,14.7-26.5,47.62-74.72,62.39-101.18,1.57-2.81,2.18-5.16,1.22-8.59-2.25-8-.96-15.91,3.6-22.93,1.06-1.63,3.65-2.26,6.11-3.69-.5-3.35.33-6.85,4.63-8.52.4-.15.79-.92.79-1.39-.07-4.35,2.44-6.62,6.5-7.78-.87-4.32-.02-7.7,4.41-9.37.57-.22,1.12-1.31,1.15-2.01.13-3.63,2.46-5.1,5.84-5.94-.83-3.84.99-5.86,4.36-7.78,3.9-2.22,6.75-6.33,10.69-8.39,16.51-8.65,32.97-6.68,48.77,1.97,13.13,7.19,22.45,17.72,25.43,32.85,1.5,7.61,1.02,15.14-2.45,22.23-2.92,5.96-7.76,8.05-13.57,4.86-10.57-5.81-20.77-12.27-31.12-18.47-11.18-6.71-22.29-13.53-33.57-20.08-2.11-1.22-4.86-1.34-7.31-1.97-.25.51-.51,1.01-.76,1.52,2.16,1.81,4.23,3.75,6.51,5.39,4.11,2.95,8.51,5.52,12.44,8.69,1.28,1.03,1.47,3.41,2.15,5.18-1.88-.22-4.13.16-5.56-.76-4.85-3.09-9.3-6.8-14.12-9.93-2.07-1.34-4.67-1.85-7.03-2.74l-1.21,1.52c1.27,1.75,2.26,3.85,3.88,5.18,3.8,3.1,7.92,5.82,11.9,8.71,1.59,1.16,3.41,2.14,4.62,3.62.87,1.07.9,2.83,1.31,4.29-1.64.06-3.73.78-4.84.05-4.56-3.02-8.81-6.5-13.19-9.8-.9-.68-1.75-1.56-2.77-1.89-1.99-.65-4.09-.97-6.15-1.42l-.8,1.33c.99,1.36,1.75,2.97,3,4.03,4.61,3.9,9.39,7.6,14.08,11.4,1.31,1.06,2.79,2.03,3.73,3.37.68.96.58,2.46.83,3.72-1.3.22-2.76.92-3.86.55-1.53-.5-2.88-1.72-4.17-2.78-4.23-3.48-8.29-7.19-12.67-10.48-1.46-1.1-3.69-1.2-5.56-1.75.88,1.83,1.32,4.16,2.73,5.38,3.8,3.3,8.05,6.09,12.06,9.16,1.88,1.44,3.83,2.9,5.33,4.7.64.76.2,2.42.25,3.67-1.42-.04-3.28.49-4.19-.21-5-3.79-9.63-8.07-14.68-11.79-1.92-1.42-4.61-1.8-6.94-2.66-.27.49-.55.97-.82,1.46.76.8,1.39,1.78,2.29,2.38,8.11,5.42,16.31,10.72,24.4,16.17,3.57,2.4,6.84,5.27,10.48,7.55,4.49,2.81,9.38,4.97,13.8,7.87,4.8,3.16,9.51,6.56,13.81,10.37,6.5,5.77,5.64,13.07-2.18,17.01-3.76,1.89-8.22,2.72-12.46,3.26-2.78.35-4.91.76-6.95,2.98-20.49,22.2-59.4,65.94-79.88,88.15-4.53,4.91-9.47,7.71-16.36,6.43-1.2-.22-3,.67-3.94,1.62-2.46,2.49-4.36,5.55-6.93,7.91-2.51,2.31-5.69,3.88-8.32,6.08-1.52,1.27-3.06,2.96-3.69,4.77-3.65,10.46-7.06,21-10.48,31.53-3.72,11.43-13.73,19.69-25.66,21.13-10.63,1.29-21.31,2.19-31.97,3.25-1.35.13-2.7.17-4.06.26.02.21.06.41.09.62,11.09.04,16.71.07.01.1.93,6.23,7.51,12.48,14.75,14.55,9.6,2.75,18.73.55,27.65-2.69,11.73-4.26,23.21-9.21,34.99-13.3,7.01-2.43,14.41-2.69,21.42.56,2.5,1.16,3.42.01,4.55-1.9,4.79-8.12,10.97-14.96,19.43-19.39,2.56-1.34,5.43-2.34,8.27-2.85,9.25-1.67,15.23,5.53,12.23,14.51-4.38,13.11-19.14,22.25-32.86,20.37-1.61-.22-3.24-.32-5.1-.5-.11,5.31,2.67,8.4,6.46,10.49,16.1,8.85,32.09,8.36,47.56-1.48,8.87-5.64,17.12-12.32,26.2-17.59,17.6-10.21,37.16-12.39,57.07-11.9,36.03.9,69.02,2.81,105.05,2.96ZM367.44,307.83c4.38,0,7.67.18,10.94-.04,8.23-.54,18.73-9.02,21.03-16.76,1.56-5.28-1.34-8.71-6.75-7.83-1.49.24-3.01.74-4.35,1.44-7.63,3.98-13.81,9.55-18.21,16.97-.88,1.49-1.38,3.21-2.65,6.22ZM513.16,34.72c-2.63,4.22-5.24,8.4-8.08,12.95,3.13,1.49,5.84,2.95,8.69,4.03.84.32,2.68-.13,3.06-.79,1.67-2.96-.79-13.41-3.66-16.18ZM506.77,27.8c-1.54,2.14-2.75,4.52-4.08,6.81-1.54,2.68-3.07,5.38-4.6,8.06.37.37.74.75,1.11,1.12,1.26-.75,2.95-1.21,3.69-2.31,2.64-3.91,5.07-7.99,7.32-12.14.45-.82-.23-2.26-.39-3.41-1.04.61-2.42.97-3.06,1.87ZM485.63,36.87c4.81-7.67,9.06-14.43,13.3-21.19-.45-.29-.9-.58-1.35-.87-3.59,1.47-13.03,17.31-11.95,22.06ZM468.06,7.72c-2.93,4.59-5.83,9.19-8.74,13.79.04.55.09,1.11.13,1.66,1.86-.1,4.77.51,5.41-.42,3.56-5.22,6.57-10.82,9.83-16.38-3.24-1.81-5.16-.96-6.63,1.35ZM444.91,14.97c3.45.86,6.88,2.3,10.35,2.38,2.11.04,5.78-8.15,5.45-11.67-5.42,2.35-10.6,4.6-15.77,6.85,0,.82-.02,1.63-.03,2.45ZM439.1,20.43c1.06.84,2.06,1.79,3.2,2.5,17.89,11.12,35.76,22.26,53.72,33.28,3.94,2.41,8.16,4.37,12.24,6.53,2.78,1.47,4.7.2,5.87-2.19,1.43-2.92-1.28-2.95-2.94-3.81-4.98-2.57-10.05-5.02-14.76-8.02-4.21-2.68-4.57-5.38-2.09-9.68,2.88-4.98,5.94-9.85,8.74-14.88.68-1.21.65-2.82.94-4.24-.47-.11-.93-.22-1.4-.34-3.07,4.95-5.98,10.01-9.27,14.81-1.55,2.26-3.52,4.54-5.85,5.84-1.59.89-4.64.86-6.09-.13-1.44-.98-2.21-3.65-2.34-5.64-.1-1.63.98-3.46,1.88-5,2.88-4.98,6-9.82,8.82-14.83.61-1.08.38-2.63.54-3.96-1.22.82-2.87,1.38-3.59,2.52-3.66,5.81-6.98,11.83-10.67,17.62-.59.93-2.43,1.07-3.69,1.58-.24-1.37-.81-2.8-.62-4.11.17-1.15,1.19-2.18,1.84-3.27,2.87-4.82,5.81-9.6,8.54-14.5.47-.84.07-2.16.06-3.25-1.02.47-2.16.79-3.03,1.46-.61.47-.86,1.42-1.27,2.15-2.85,4.99-5.55,10.08-8.6,14.94-2.23,3.55-5.63,4.66-9.51,2.66-3.98-2.06-7.75-4.53-11.77-6.52-2.64-1.31-5.54-2.09-8.33-3.11-.2.52-.39,1.04-.59,1.56ZM459.89,122.31c-14.28-12.78-29.89-23.11-46.36-33.41.71,12.42,35.39,37.06,46.36,33.41ZM406.67,87.04c2.57-1.12,4.8-2.76,7.13-2.91,2.01-.13,4.33,1.14,6.18,2.32,15.49,9.92,31.21,19.56,44.18,32.84,2.59,2.65,4.64,1.89,6.79-.09,2.24-2.07,2.43-4.33.01-6.5-.94-.84-1.8-1.8-2.83-2.5-20.1-13.62-40.22-27.22-60.33-40.82-2.36-1.6-3.36-.48-3.62,1.84-.61,5.52-.29,10.92,2.49,15.83ZM341.77,209.62c3.04,3.25,6.39,6.38,10.12,8.77,5.25,3.36,11.1,3.69,16.83-2.63,18.02-19.9,54.69-61.13,72.95-80.81,2.17-2.34,4.25-4.77,6.65-7.47-1.27-.9-2.08-1.66-3.02-2.12-14.63-7.14-26.69-17.61-37.99-29.07-3.23-3.27-3.65-3.3-5.92.78-8.19,14.72-54.69,87.83-60.88,98.66-2.91,5.1-2.59,9.77,1.26,13.89ZM334.74,235.03c.54.4,1.09.79,1.63,1.19,4.98-3.19,7.87-8.49,11.91-12.64-.05-.57-.1-1.15-.15-1.72-1.87-.38-5.01-1.59-5.39-1-2.97,4.53-5.4,9.4-7.99,14.17ZM251.32,302.98c-.86-.19-1.83-.27-2.94-.26-39.21.12-17.01.2,2.94.26ZM1487.84,295.36v-.04c-.28.01-.14.02,0,.04ZM.41,303.37H.41c-1.53,0,1.88,0,0,0ZM482.24,103.12c-9.83-6.77-19.71-13.48-29.62-20.12-1.49-1-3.25-1.62-4.88-2.42l-1.78-1.54c-.39,1.24-1.1,2.49-1.07,3.72.02,1.09.56,2.6,1.38,3.17,3.76,2.56,7.77,4.76,11.57,7.27,5.85,3.87,11.63,7.83,17.36,11.88,2.4,1.69,4.48,3.85,6.93,5.44.74.48,2.64.18,3.27-.47.62-.64.75-2.44.27-3.28-.8-1.42-2.08-2.71-3.44-3.64ZM509.95,76.54c-1.92-2.18-2.63-3.5-3.73-4.15-10.88-6.41-21.78-12.77-32.77-18.98-2.01-1.14-4.86-3.58-6.64-.44-1.87,3.31,1.84,4.54,3.9,5.75,8.6,5.06,17.34,9.88,26.02,14.8,2.45,1.38,4.75,3.14,7.35,4.08,1.32.47,3.16-.51,5.87-1.05ZM490.43,102.39c.59-.19.88-1.28,1.59-2.41-1.8-1.95-3.28-4.35-5.41-5.72-9.91-6.35-20.01-12.4-30.02-18.58-1.93-1.19-4.19-2.19-5.36.3-.46.98.93,3.65,2.19,4.48,11.2,7.43,22.54,14.65,33.9,21.83.77.49,2.16.4,3.1.1Z" />
+            </g>
+          </svg>
+        </div>
+        <div class="hero-description">
+          <div class="text-box">
+            <p>
+              גאים לשתף בפרויקט חדש ומרגש של המשרד – סדרת הפודקאסט "המתמחים" מבית The Insiders. <br />
+              <span class="font-light">
+
+                סדרת פרקים ייחודית שמעניקה הצצה כנה לחוויות ולהתמודדויות של המתמחים והמתמחות שלנו.
+              </span>
+            </p>
+            <p class="font-light">
+              במהלך הסדרה, שכוללת 5 פרקים, השתתפו מתמחים ומתמחות מהמשרד שהתכנסו לשיחות פתוחות וכנות, בהם שאלו אחד את
+              השנייה את השאלות שהכי מעניינות סטודנטים למשפטים:
+
+            </p>
+
+            <p>
+              איך נראית ההתמחות באמת? אילו שיקולים היו להם.ן בבחירת מקום ההתמחות? כיצד ידעו באיזה תחום התמחות לבחור?
+              כיצד נראה יום סטנדרטי (אם יש כזה) בחיי המתמחה? ואילו טיפים היו נותנים למי שעומד בפני שבוע ראיונות,
+              וההתמחות בכלל.
+
+            </p>
+          </div>
+          <svg class="hero-img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 538.65 261.4">
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: #00b388;
+                }
+
+                .cls-2 {
+                  fill: #fff;
+                }
+              </style>
+            </defs>
+            <g id="My_Shibolet" data-name="My Shibolet">
+              <g id="The_Insiders" data-name="The Insiders">
+                <rect class="cls-1" y="0" width="538.65" height="261.4" />
+                <g>
+                  <path class="cls-2" d="M69.54,72.42v-11h48.73v11h-17.83v48.48h-13.08v-48.48h-17.83Z" />
+                  <path class="cls-2"
+                    d="M138.13,61.42v22.82h24.07v-22.82h13.08v59.48h-13.08v-25.66h-24.07v25.66h-13.08v-59.48h13.08Z" />
+                  <path class="cls-2"
+                    d="M227.06,61.42v11h-31.41v12.75h28.82v10.16h-28.82v14.58h32.07v11h-45.15v-59.48h44.48Z" />
+                  <path d="M100.44,133.11v59.48h-13.08v-59.48h13.08Z" />
+                  <path d="M240.29,133.11v59.48h-13.08v-59.48h13.08Z" />
+                  <path
+                    d="M122.76,133.11l24.82,39.9h.17v-39.9h12.25v59.48h-13.08l-24.74-39.82h-.17v39.82h-12.25v-59.48h13Z" />
+                  <path
+                    d="M181.99,177.93c.72,1.39,1.68,2.51,2.87,3.37,1.19.86,2.6,1.5,4.21,1.92,1.61.42,3.28.62,5,.62,1.17,0,2.42-.1,3.75-.29,1.33-.19,2.58-.57,3.75-1.12,1.17-.55,2.14-1.32,2.92-2.29.78-.97,1.17-2.21,1.17-3.71,0-1.61-.51-2.92-1.54-3.91-1.03-1-2.37-1.83-4.04-2.5-1.67-.67-3.55-1.25-5.66-1.75-2.11-.5-4.25-1.05-6.41-1.67-2.22-.55-4.39-1.24-6.5-2.04-2.11-.8-4-1.85-5.66-3.12-1.67-1.28-3.01-2.87-4.04-4.79-1.03-1.92-1.54-4.23-1.54-6.96,0-3.05.65-5.71,1.96-7.96,1.3-2.25,3.01-4.12,5.12-5.62,2.11-1.5,4.5-2.61,7.16-3.33,2.67-.72,5.33-1.08,8-1.08,3.11,0,6.09.35,8.95,1.04,2.86.7,5.4,1.82,7.62,3.37,2.22,1.56,3.98,3.54,5.29,5.96,1.3,2.42,1.96,5.35,1.96,8.79h-12.66c-.11-1.78-.49-3.25-1.12-4.42-.64-1.17-1.49-2.08-2.54-2.75-1.06-.67-2.26-1.14-3.62-1.42-1.36-.28-2.85-.42-4.46-.42-1.06,0-2.11.11-3.17.33-1.06.22-2.01.61-2.87,1.17-.86.56-1.57,1.25-2.12,2.08-.56.83-.83,1.89-.83,3.17,0,1.17.22,2.11.67,2.83.44.72,1.32,1.39,2.62,2,1.3.61,3.11,1.22,5.41,1.83,2.3.61,5.32,1.39,9.04,2.33,1.11.22,2.65.62,4.62,1.21,1.97.58,3.93,1.51,5.87,2.79,1.94,1.28,3.62,2.99,5.04,5.12,1.42,2.14,2.12,4.87,2.12,8.21,0,2.72-.53,5.25-1.58,7.58-1.06,2.33-2.62,4.35-4.71,6.04-2.08,1.69-4.67,3.01-7.75,3.96-3.08.94-6.65,1.42-10.7,1.42-3.28,0-6.46-.4-9.54-1.21-3.08-.8-5.8-2.07-8.16-3.79-2.36-1.72-4.24-3.92-5.62-6.58-1.39-2.67-2.06-5.83-2-9.5h12.66c0,2,.36,3.69,1.08,5.08Z" />
+                  <path d="M354.56,133.11v11h-31.41v12.74h28.82v10.16h-28.82v14.58h32.07v11h-45.15v-59.48h44.48Z" />
+                  <path
+                    d="M395.55,133.11c2.67,0,5.07.43,7.21,1.29,2.14.86,3.97,2.04,5.5,3.54,1.53,1.5,2.69,3.24,3.5,5.21.8,1.97,1.21,4.1,1.21,6.37,0,3.5-.74,6.53-2.21,9.08-1.47,2.55-3.87,4.5-7.21,5.83v.17c1.61.44,2.94,1.12,4,2.04,1.05.92,1.92,2,2.58,3.25.67,1.25,1.15,2.62,1.46,4.12.3,1.5.51,3,.62,4.5.05.95.11,2.06.17,3.33.05,1.28.15,2.58.29,3.91.14,1.33.36,2.6.67,3.79.3,1.19.76,2.21,1.37,3.04h-13.08c-.72-1.89-1.17-4.14-1.33-6.75-.17-2.61-.42-5.11-.75-7.5-.44-3.11-1.39-5.39-2.83-6.83-1.44-1.44-3.8-2.17-7.08-2.17h-13.08v23.24h-13.08v-59.48h32.07ZM390.88,160.02c3,0,5.25-.67,6.75-2,1.5-1.33,2.25-3.5,2.25-6.5s-.75-4.98-2.25-6.29c-1.5-1.3-3.75-1.96-6.75-1.96h-14.33v16.74h14.33Z" />
+                  <path
+                    d="M432.79,177.93c.72,1.39,1.68,2.51,2.87,3.37,1.19.86,2.6,1.5,4.21,1.92,1.61.42,3.28.62,5,.62,1.17,0,2.42-.1,3.75-.29,1.33-.19,2.58-.57,3.75-1.12,1.17-.55,2.14-1.32,2.92-2.29.78-.97,1.17-2.21,1.17-3.71,0-1.61-.51-2.92-1.54-3.91-1.03-1-2.37-1.83-4.04-2.5-1.67-.67-3.55-1.25-5.66-1.75-2.11-.5-4.25-1.05-6.41-1.67-2.22-.55-4.39-1.24-6.5-2.04-2.11-.8-4-1.85-5.66-3.12-1.67-1.28-3.01-2.87-4.04-4.79-1.03-1.92-1.54-4.23-1.54-6.96,0-3.05.65-5.71,1.96-7.96,1.3-2.25,3.01-4.12,5.12-5.62,2.11-1.5,4.5-2.61,7.16-3.33,2.67-.72,5.33-1.08,8-1.08,3.11,0,6.09.35,8.95,1.04,2.86.7,5.4,1.82,7.62,3.37,2.22,1.56,3.98,3.54,5.29,5.96,1.3,2.42,1.96,5.35,1.96,8.79h-12.66c-.11-1.78-.49-3.25-1.12-4.42-.64-1.17-1.49-2.08-2.54-2.75-1.06-.67-2.26-1.14-3.62-1.42-1.36-.28-2.85-.42-4.46-.42-1.06,0-2.11.11-3.17.33-1.06.22-2.01.61-2.87,1.17-.86.56-1.57,1.25-2.12,2.08-.56.83-.83,1.89-.83,3.17,0,1.17.22,2.11.67,2.83.44.72,1.32,1.39,2.62,2,1.3.61,3.11,1.22,5.41,1.83,2.3.61,5.32,1.39,9.04,2.33,1.11.22,2.65.62,4.62,1.21,1.97.58,3.93,1.51,5.87,2.79,1.94,1.28,3.62,2.99,5.04,5.12,1.42,2.14,2.12,4.87,2.12,8.21,0,2.72-.53,5.25-1.58,7.58-1.06,2.33-2.62,4.35-4.71,6.04-2.08,1.69-4.67,3.01-7.75,3.96s-6.65,1.42-10.7,1.42c-3.28,0-6.46-.4-9.54-1.21-3.08-.8-5.8-2.07-8.16-3.79-2.36-1.72-4.23-3.92-5.62-6.58-1.39-2.67-2.06-5.83-2-9.5h12.66c0,2,.36,3.69,1.08,5.08Z" />
+                  <path
+                    d="M300.16,149.61c-1.36-3.67-3.25-6.72-5.66-9.16-2.42-2.44-5.28-4.28-8.58-5.5-3.3-1.22-6.87-1.83-10.7-1.83h-25.66v59.48h10.36l13.24,7.38v-50.28l-10.62-5.59h23.57v46.6c.33-.13.66-.26.98-.41,3.36-1.53,6.16-3.62,8.41-6.29,2.25-2.67,3.93-5.83,5.04-9.5,1.11-3.67,1.67-7.66,1.67-12,0-4.94-.68-9.25-2.04-12.91ZM268.18,168.94c.69,0,1.24.83,1.24,1.86s-.56,1.86-1.24,1.86-1.24-.83-1.24-1.86.56-1.86,1.24-1.86Z" />
+                </g>
+              </g>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="podcast dark-green">
+      <div class="container podcast-box">
+        <div class="episode-number">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 63.6 140">
+            <defs>
+              <style>
+                .dark-green {
+                  fill: #00b388;
+                }
+              </style>
+            </defs>
+            <g>
+              <path class="dark-green"
+                d="M35.2,140V49.2H0v-21.4c4.93.13,9.7-.23,14.3-1.1,4.6-.87,8.73-2.4,12.4-4.6,3.67-2.2,6.77-5.1,9.3-8.7,2.53-3.6,4.2-8.07,5-13.4h22.6v140h-28.4Z" />
+            </g>
+          </svg>
+        </div>
+        <div class="episode-details">
+          <h2 class="episode-title">
+            <span class="color">פרק ראשון</span>
+            |
+            שי פרקש וליאור צח
+          </h2>
+          <p class="episode-description">
+            בפרק הראשון שי פרקש, מתמחה במחלקת ההייטק, וליאור צח, מתמחה במחלקה המסחרית מימון פרויקטים אנרגיות ותשתיות,
+            מספרים על החוויה שלהם מתקופת הראיונות איך לדעת לאיזו מחלקה כדאי להתראיין, טיפים לאיך לעבור את הראיון, ועל
+            החוויות שלהם כמתמחים – הטוב הרע והבין לבין.
+          </p>
+          <ul class="episode-btns">
+            <li class="color font-medium">להאזנה:</li>
+            <li><a class="episode-btn" href="#">
+                <span>Apple Podcasts</span>
+                <i class="fa-solid fa-podcast podcast-icon"></i>
+              </a></li>
+            <li>|</li>
+            <li><a class="episode-btn" href="#">
+                <span>Spotify</span>
+                <i class="fa-brands fa-spotify podcast-icon"></i>
+              </a></li>
+          </ul>
+          <iframe src="https://www.youtube.com/embed/uqmsCFRpiZA?si=c0JrVL1Uhv9Yu9Xs" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="podcast light-green">
+      <div class="container podcast-box">
+        <div class="episode-number">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 102.8 142.8">
+            <defs>
+              <style>
+                .light-green {
+                  fill: #a4d65e;
+                }
+              </style>
+            </defs>
+            <g>
+              <path class="light-green"
+                d="M6,34.3c2.13-6.87,5.33-12.87,9.6-18,4.27-5.13,9.63-9.13,16.1-12C38.17,1.43,45.6,0,54,0c6.4,0,12.5,1,18.3,3,5.8,2,10.9,4.87,15.3,8.6,4.4,3.73,7.9,8.33,10.5,13.8,2.6,5.47,3.9,11.6,3.9,18.4s-1.13,13.13-3.4,18.2c-2.27,5.07-5.27,9.57-9,13.5-3.73,3.93-7.97,7.5-12.7,10.7-4.73,3.2-9.5,6.37-14.3,9.5-4.8,3.13-9.47,6.5-14,10.1-4.53,3.6-8.53,7.8-12,12.6h66.2v24.4H0c0-8.13,1.17-15.2,3.5-21.2,2.33-6,5.5-11.37,9.5-16.1,4-4.73,8.7-9.1,14.1-13.1,5.4-4,11.1-8.07,17.1-12.2,3.07-2.13,6.33-4.3,9.8-6.5,3.47-2.2,6.63-4.63,9.5-7.3,2.87-2.67,5.27-5.67,7.2-9,1.93-3.33,2.9-7.13,2.9-11.4,0-6.8-1.97-12.1-5.9-15.9-3.93-3.8-8.97-5.7-15.1-5.7-4.13,0-7.63.97-10.5,2.9-2.87,1.93-5.17,4.47-6.9,7.6-1.73,3.13-2.97,6.6-3.7,10.4-.73,3.8-1.1,7.57-1.1,11.3H3.2c-.27-8,.67-15.43,2.8-22.3Z" />
+            </g>
+          </svg>
+        </div>
+        <div class="episode-details">
+          <h2 class="episode-title">
+            <span class="color">פרק שני</span>
+            |
+            יהב טיבי ושי פרקש
+          </h2>
+          <p class="episode-description">
+            איך נראית ההתמחות באחת ממחלקות הדגל של שבלת? בפרק השני של סדרת הפודקאסט "המתמחים", שי פרקש, מתמחה במחלקת
+            ההייטק, ויהב טיבי, מתמחה במחלקת הליטיגציה, משתפים מניסיונם האישי ומספרים על חוויית ההתמחות בשבלת.
+            <br />
+            בפרק הם מספקים הצצה לעבודה המעשית במחלקת הליטיגציה, הכוללת מעורבות בתיקים מסחריים מורכבים, השתתפות בהליכים
+            מקדמיים, כתיבת תצהירים, השתתפות בדיונים ואף הופעות בבתי משפט, גישורים ובוררויות. בנוסף, הם מתארים את
+            הדינמיקה הייחודית של עבודה משולבת בין מחלקות, האתגרים וההזדמנויות שהיא מזמנת, ואת הכלים המקצועיים שרכשו
+            בעבודה הצמודה עם עורכי הדין הבכירים במשרד.
+
+
+          </p>
+          <ul class="episode-btns">
+            <li class="color font-medium">להאזנה:</li>
+            <li><a class="episode-btn" href="#">
+                <span>Apple Podcasts</span>
+                <i class="fa-solid fa-podcast podcast-icon"></i>
+              </a></li>
+            <li>|</li>
+            <li><a class="episode-btn" href="#">
+                <span>Spotify</span>
+                <i class="fa-brands fa-spotify podcast-icon"></i>
+              </a></li>
+          </ul>
+          <iframe src="https://www.youtube.com/embed/uqmsCFRpiZA?si=c0JrVL1Uhv9Yu9Xs" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="podcast deep-blue">
+      <div class="container podcast-box">
+        <div class="episode-number">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 104.01 145.4">
+            <defs>
+              <style>
+                .deep-blue {
+                  fill: #20cbd4;
+                }
+              </style>
+            </defs>
+            <g>
+              <path class="deep-blue"
+                d="M51.81,59.4c3.47-.27,6.7-1.03,9.7-2.3,3-1.27,5.46-3.1,7.4-5.5,1.93-2.4,2.9-5.6,2.9-9.6,0-6-2-10.6-6-13.8-4-3.2-8.6-4.8-13.8-4.8-7.2,0-12.63,2.37-16.3,7.1-3.67,4.73-5.43,10.7-5.3,17.9H3.41c.27-7.2,1.57-13.77,3.9-19.7,2.33-5.93,5.6-11.03,9.8-15.3,4.2-4.27,9.23-7.57,15.1-9.9,5.87-2.33,12.4-3.5,19.6-3.5,5.6,0,11.2.83,16.8,2.5,5.6,1.67,10.63,4.17,15.1,7.5,4.47,3.33,8.1,7.4,10.9,12.2,2.8,4.8,4.2,10.33,4.2,16.6,0,6.8-1.63,12.8-4.9,18-3.27,5.2-8.17,8.73-14.7,10.6v.4c7.73,1.73,13.8,5.47,18.2,11.2,4.4,5.73,6.6,12.6,6.6,20.6,0,7.33-1.44,13.87-4.3,19.6-2.87,5.73-6.7,10.53-11.5,14.4-4.8,3.87-10.33,6.8-16.6,8.8-6.27,2-12.8,3-19.6,3-7.87,0-15.04-1.13-21.5-3.4-6.47-2.27-11.97-5.57-16.5-9.9-4.54-4.33-8.04-9.63-10.5-15.9C1.04,109.93-.12,102.73.01,94.6h27c.13,3.73.73,7.3,1.8,10.7,1.07,3.4,2.6,6.33,4.6,8.8,2,2.47,4.5,4.43,7.5,5.9,3,1.47,6.57,2.2,10.7,2.2,6.4,0,11.8-1.97,16.2-5.9,4.4-3.93,6.6-9.3,6.6-16.1,0-5.33-1.03-9.4-3.1-12.2-2.07-2.8-4.7-4.83-7.9-6.1-3.2-1.27-6.7-2-10.5-2.2-3.8-.2-7.43-.3-10.9-.3v-20c3.06.27,6.33.27,9.8,0Z" />
+            </g>
+          </svg>
+        </div>
+        <div class="episode-details">
+          <h2 class="episode-title">
+            <span class="color">פרק שני</span>
+            |
+            שי פרקש וליאור צח
+          </h2>
+          <p class="episode-description">
+            בפרק הראשון שי פרקש, מתמחה במחלקת ההייטק, וליאור צח, מתמחה במחלקה המסחרית מימון פרויקטים אנרגיות ותשתיות,
+            מספרים על החוויה שלהם מתקופת הראיונות איך לדעת לאיזו מחלקה כדאי להתראיין, טיפים לאיך לעבור את הראיון, ועל
+            החוויות שלהם כמתמחים – הטוב הרע והבין לבין.
+
+          </p>
+          <ul class="episode-btns">
+            <li class="color font-medium">להאזנה:</li>
+            <li><a class="episode-btn" href="#">
+                <span>Apple Podcasts</span>
+                <i class="fa-solid fa-podcast podcast-icon"></i>
+              </a></li>
+            <li>|</li>
+            <li><a class="episode-btn" href="#">
+                <span>Spotify</span>
+                <i class="fa-brands fa-spotify podcast-icon"></i>
+              </a></li>
+          </ul>
+          <iframe src="https://www.youtube.com/embed/uqmsCFRpiZA?si=c0JrVL1Uhv9Yu9Xs" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="podcast powder-blue">
+      <div class="container podcast-box">
+        <div class="episode-number">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 104.8 140">
+            <defs>
+              <style>
+                .powder-blue {
+                  fill: #92c1e9;
+                }
+              </style>
+            </defs>
+            <g>
+              <path class="powder-blue"
+                d="M0,107.6v-26L60.8,0h25.4v84.2h18.6v23.4h-18.6v32.4h-27v-32.4H0ZM58.6,35.6l-36.2,48.6h36.8v-48.6h-.6Z" />
+            </g>
+          </svg>
+        </div>
+        <div class="episode-details">
+          <h2 class="episode-title">
+            <span class="color">פרק שני</span>
+            |
+            יהב טיבי ושי פרקש
+          </h2>
+          <p class="episode-description">
+            איך נראית ההתמחות באחת ממחלקות הדגל של שבלת? בפרק השני של סדרת הפודקאסט "המתמחים", שי פרקש, מתמחה במחלקת
+            ההייטק, ויהב טיבי, מתמחה במחלקת הליטיגציה, משתפים מניסיונם האישי ומספרים על חוויית ההתמחות בשבלת.
+            <br />
+            בפרק הם מספקים הצצה לעבודה המעשית במחלקת הליטיגציה, הכוללת מעורבות בתיקים מסחריים מורכבים, השתתפות בהליכים
+            מקדמיים, כתיבת תצהירים, השתתפות בדיונים ואף הופעות בבתי משפט, גישורים ובוררויות. בנוסף, הם מתארים את
+            הדינמיקה הייחודית של עבודה משולבת בין מחלקות, האתגרים וההזדמנויות שהיא מזמנת, ואת הכלים המקצועיים שרכשו
+            בעבודה הצמודה עם עורכי הדין הבכירים במשרד.
+
+
+          </p>
+          <ul class="episode-btns">
+            <li class="color font-medium">להאזנה:</li>
+            <li><a class="episode-btn" href="#">
+                <span>Apple Podcasts</span>
+                <i class="fa-solid fa-podcast podcast-icon"></i>
+              </a></li>
+            <li>|</li>
+            <li><a class="episode-btn" href="#">
+                <span>Spotify</span>
+                <i class="fa-brands fa-spotify podcast-icon"></i>
+              </a></li>
+          </ul>
+          <iframe src="https://www.youtube.com/embed/uqmsCFRpiZA?si=c0JrVL1Uhv9Yu9Xs" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="podcast green-blue">
+      <div class="container podcast-box">
+        <div class="episode-number">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 104 142.61">
+            <defs>
+              <style>
+                .green-blue {
+                  fill: #008c95;
+                }
+              </style>
+            </defs>
+            <g>
+              <path class="green-blue"
+                d="M38.6,23.4l-5.6,31.8.4.4c3.87-3.87,8-6.63,12.4-8.3,4.4-1.67,9.4-2.5,15-2.5,6.93,0,13.07,1.27,18.4,3.8,5.33,2.53,9.83,5.93,13.5,10.2,3.67,4.27,6.47,9.3,8.4,15.1,1.93,5.8,2.9,11.97,2.9,18.5,0,7.2-1.4,13.9-4.2,20.1-2.8,6.2-6.57,11.57-11.3,16.1-4.73,4.53-10.23,8.03-16.5,10.5-6.27,2.46-12.94,3.63-20,3.5-6.8,0-13.3-.9-19.5-2.7-6.2-1.8-11.7-4.57-16.5-8.3-4.8-3.73-8.63-8.37-11.5-13.9-2.87-5.53-4.37-11.96-4.5-19.3h28.4c.67,6.4,3.07,11.5,7.2,15.3,4.13,3.8,9.4,5.7,15.8,5.7,3.73,0,7.1-.77,10.1-2.3,3-1.53,5.53-3.53,7.6-6,2.07-2.47,3.67-5.33,4.8-8.6,1.13-3.27,1.7-6.63,1.7-10.1s-.54-7-1.6-10.2c-1.07-3.2-2.67-6-4.8-8.4-2.13-2.4-4.67-4.27-7.6-5.6-2.93-1.33-6.33-2-10.2-2-5.07,0-9.2.9-12.4,2.7-3.2,1.8-6.2,4.63-9,8.5H4.4L18.2,0h78.2v23.4h-57.8Z" />
+            </g>
+          </svg>
+        </div>
+        <div class="episode-details">
+          <h2 class="episode-title">
+            <span class="color">פרק שני</span>
+            |
+            שי פרקש וליאור צח
+          </h2>
+          <p class="episode-description">
+            בפרק הראשון שי פרקש, מתמחה במחלקת ההייטק, וליאור צח, מתמחה במחלקה המסחרית מימון פרויקטים אנרגיות ותשתיות,
+            מספרים על החוויה שלהם מתקופת הראיונות איך לדעת לאיזו מחלקה כדאי להתראיין, טיפים לאיך לעבור את הראיון, ועל
+            החוויות שלהם כמתמחים – הטוב הרע והבין לבין.
+
+          </p>
+          <ul class="episode-btns">
+            <li class="color font-medium">להאזנה:</li>
+            <li><a class="episode-btn" href="#">
+                <span>Apple Podcasts</span>
+                <i class="fa-solid fa-podcast podcast-icon"></i>
+              </a></li>
+            <li>|</li>
+            <li><a class="episode-btn" href="#">
+                <span>Spotify</span>
+                <i class="fa-brands fa-spotify podcast-icon"></i>
+              </a></li>
+          </ul>
+          <iframe src="https://www.youtube.com/embed/uqmsCFRpiZA?si=c0JrVL1Uhv9Yu9Xs" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="team">
+      <div class="container">
+        <ul class="interns">
+          <li class="intern">
+            <div class="img-box">
+              <svg class="circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220">
+                <g>
+                  <path
+                    d="M13.21,110C13.21,56.54,56.54,13.21,110,13.21s96.79,43.33,96.79,96.79h0s13.21,0,13.21,0C220,49.35,170.65,0,110,0S0,49.35,0,110s49.35,110,110,110v-13.21c-53.46,0-96.79-43.33-96.79-96.79Z" />
+                </g>
+              </svg>
+              <img
+                src="https://www.shibolet.com/wp-content/uploads/2024/05/%D7%A9%D7%99-%D7%A4%D7%A8%D7%A7%D7%A9WEB-2-300x300.jpg"
+                alt="שי פרקש" srcset="">
+
+            </div>
+
+            <p class="intern-name">
+              שי פרקש
+            </p>
+            <p class="intern-job-title">
+              מתמחה
+
+            </p>
+          </li>
+          <li class="intern">
+            <div class="img-box">
+              <svg class="circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220">
+                <g>
+                  <path
+                    d="M13.21,110C13.21,56.54,56.54,13.21,110,13.21s96.79,43.33,96.79,96.79h0s13.21,0,13.21,0C220,49.35,170.65,0,110,0S0,49.35,0,110s49.35,110,110,110v-13.21c-53.46,0-96.79-43.33-96.79-96.79Z" />
+                </g>
+              </svg>
+              <img
+                src="https://www.shibolet.com/wp-content/uploads/2024/05/%D7%A9%D7%99-%D7%A4%D7%A8%D7%A7%D7%A9WEB-2-300x300.jpg"
+                alt="שי פרקש" srcset="">
+
+            </div>
+
+            <p class="intern-name">
+              שי פרקש
+            </p>
+            <p class="intern-job-title">
+              מתמחה
+
+            </p>
+          </li>
+          <li class="intern">
+            <div class="img-box">
+              <svg class="circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220">
+                <g>
+                  <path
+                    d="M13.21,110C13.21,56.54,56.54,13.21,110,13.21s96.79,43.33,96.79,96.79h0s13.21,0,13.21,0C220,49.35,170.65,0,110,0S0,49.35,0,110s49.35,110,110,110v-13.21c-53.46,0-96.79-43.33-96.79-96.79Z" />
+                </g>
+              </svg>
+              <img
+                src="https://www.shibolet.com/wp-content/uploads/2024/05/%D7%A9%D7%99-%D7%A4%D7%A8%D7%A7%D7%A9WEB-2-300x300.jpg"
+                alt="שי פרקש" srcset="">
+
+            </div>
+
+            <p class="intern-name">
+              שי פרקש
+            </p>
+            <p class="intern-job-title">
+              מתמחה
+
+            </p>
+          </li>
+          <li class="intern">
+            <div class="img-box">
+              <svg class="circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220">
+                <g>
+                  <path
+                    d="M13.21,110C13.21,56.54,56.54,13.21,110,13.21s96.79,43.33,96.79,96.79h0s13.21,0,13.21,0C220,49.35,170.65,0,110,0S0,49.35,0,110s49.35,110,110,110v-13.21c-53.46,0-96.79-43.33-96.79-96.79Z" />
+                </g>
+              </svg>
+              <img
+                src="https://www.shibolet.com/wp-content/uploads/2024/05/%D7%A9%D7%99-%D7%A4%D7%A8%D7%A7%D7%A9WEB-2-300x300.jpg"
+                alt="שי פרקש" srcset="">
+
+            </div>
+
+            <p class="intern-name">
+              שי פרקש
+            </p>
+            <p class="intern-job-title">
+              מתמחה
+
+            </p>
+          </li>
+          <li class="intern">
+            <div class="img-box">
+              <svg class="circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220">
+                <g>
+                  <path
+                    d="M13.21,110C13.21,56.54,56.54,13.21,110,13.21s96.79,43.33,96.79,96.79h0s13.21,0,13.21,0C220,49.35,170.65,0,110,0S0,49.35,0,110s49.35,110,110,110v-13.21c-53.46,0-96.79-43.33-96.79-96.79Z" />
+                </g>
+              </svg>
+              <img
+                src="https://www.shibolet.com/wp-content/uploads/2024/05/%D7%A9%D7%99-%D7%A4%D7%A8%D7%A7%D7%A9WEB-2-300x300.jpg"
+                alt="שי פרקש" srcset="">
+
+            </div>
+
+            <p class="intern-name">
+              שי פרקש
+            </p>
+            <p class="intern-job-title">
+              מתמחה
+
+            </p>
+          </li>
+          <li class="intern">
+            <div class="img-box">
+              <svg class="circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220">
+                <g>
+                  <path
+                    d="M13.21,110C13.21,56.54,56.54,13.21,110,13.21s96.79,43.33,96.79,96.79h0s13.21,0,13.21,0C220,49.35,170.65,0,110,0S0,49.35,0,110s49.35,110,110,110v-13.21c-53.46,0-96.79-43.33-96.79-96.79Z" />
+                </g>
+              </svg>
+              <img
+                src="https://www.shibolet.com/wp-content/uploads/2024/05/%D7%A9%D7%99-%D7%A4%D7%A8%D7%A7%D7%A9WEB-2-300x300.jpg"
+                alt="שי פרקש" srcset="">
+
+            </div>
+
+            <p class="intern-name">
+              שי פרקש
+            </p>
+            <p class="intern-job-title">
+              מתמחה
+
+            </p>
+          </li>
+          <li class="intern">
+            <div class="img-box">
+              <svg class="circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220">
+                <g>
+                  <path
+                    d="M13.21,110C13.21,56.54,56.54,13.21,110,13.21s96.79,43.33,96.79,96.79h0s13.21,0,13.21,0C220,49.35,170.65,0,110,0S0,49.35,0,110s49.35,110,110,110v-13.21c-53.46,0-96.79-43.33-96.79-96.79Z" />
+                </g>
+              </svg>
+              <img
+                src="https://www.shibolet.com/wp-content/uploads/2024/05/%D7%A9%D7%99-%D7%A4%D7%A8%D7%A7%D7%A9WEB-2-300x300.jpg"
+                alt="שי פרקש" srcset="">
+
+            </div>
+
+            <p class="intern-name">
+              שי פרקש
+            </p>
+            <p class="intern-job-title">
+              מתמחה
+
+            </p>
+          </li>
+          <li class="intern">
+            <div class="img-box">
+              <svg class="circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220">
+                <g>
+                  <path
+                    d="M13.21,110C13.21,56.54,56.54,13.21,110,13.21s96.79,43.33,96.79,96.79h0s13.21,0,13.21,0C220,49.35,170.65,0,110,0S0,49.35,0,110s49.35,110,110,110v-13.21c-53.46,0-96.79-43.33-96.79-96.79Z" />
+                </g>
+              </svg>
+              <img
+                src="https://www.shibolet.com/wp-content/uploads/2024/05/%D7%A9%D7%99-%D7%A4%D7%A8%D7%A7%D7%A9WEB-2-300x300.jpg"
+                alt="שי פרקש" srcset="">
+
+            </div>
+
+            <p class="intern-name">
+              שי פרקש
+            </p>
+            <p class="intern-job-title">
+              מתמחה
+
+            </p>
+          </li>
+          <li class="intern">
+            <div class="img-box">
+              <svg class="circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220">
+                <g>
+                  <path
+                    d="M13.21,110C13.21,56.54,56.54,13.21,110,13.21s96.79,43.33,96.79,96.79h0s13.21,0,13.21,0C220,49.35,170.65,0,110,0S0,49.35,0,110s49.35,110,110,110v-13.21c-53.46,0-96.79-43.33-96.79-96.79Z" />
+                </g>
+              </svg>
+              <img
+                src="https://www.shibolet.com/wp-content/uploads/2024/05/%D7%A9%D7%99-%D7%A4%D7%A8%D7%A7%D7%A9WEB-2-300x300.jpg"
+                alt="שי פרקש" srcset="">
+
+            </div>
+
+            <p class="intern-name">
+              שי פרקש
+            </p>
+            <p class="intern-job-title">
+              מתמחה
+
+            </p>
+          </li>
+          <li class="intern">
+            <div class="img-box">
+              <svg class="circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220">
+                <g>
+                  <path
+                    d="M13.21,110C13.21,56.54,56.54,13.21,110,13.21s96.79,43.33,96.79,96.79h0s13.21,0,13.21,0C220,49.35,170.65,0,110,0S0,49.35,0,110s49.35,110,110,110v-13.21c-53.46,0-96.79-43.33-96.79-96.79Z" />
+                </g>
+              </svg>
+              <img
+                src="https://www.shibolet.com/wp-content/uploads/2024/05/%D7%A9%D7%99-%D7%A4%D7%A8%D7%A7%D7%A9WEB-2-300x300.jpg"
+                alt="שי פרקש" srcset="">
+
+            </div>
+
+            <p class="intern-name">
+              שי פרקש
+            </p>
+            <p class="intern-job-title">
+              מתמחה
+
+            </p>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+  </main>
+  <footer>
+    <div class="container">
+      <div class="info">
+        <div class="info-textbox">
+          <a href="#">
+            <svg class="logo footer-logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+              id="Layer_1" x="0px" y="0px" viewBox="0 0 310 60" style="enable-background:new 0 0 310 60;"
+              xml:space="preserve">
+              <path
+                d="M255.51,21.64h-12.48v-5.18h12.48V21.64z M243.03,8.33h20.89V3.15h-20.89V8.33z M288.41,56.85h1.25V50.9h0.02l2.08,5.96 h1.08l2.08-5.96h0.02v5.96h1.25v-7.72h-1.83l-2.02,6.04h-0.02l-2.07-6.04h-1.85V56.85z M268.64,52.65h2.16 c0.42,0,0.74-0.1,0.96-0.31c0.22-0.21,0.33-0.51,0.33-0.93c0-0.24-0.04-0.44-0.11-0.6c-0.07-0.15-0.17-0.28-0.29-0.36 c-0.12-0.09-0.26-0.14-0.42-0.17c-0.16-0.03-0.32-0.04-0.49-0.04h-2.14V52.65z M267.32,49.14h3.59c0.83,0,1.45,0.18,1.86,0.55 c0.42,0.37,0.62,0.88,0.62,1.53c0,0.37-0.05,0.67-0.16,0.91c-0.11,0.24-0.23,0.44-0.37,0.58c-0.14,0.15-0.28,0.25-0.42,0.32 c-0.14,0.07-0.24,0.11-0.3,0.13v0.02c0.11,0.02,0.23,0.05,0.36,0.11c0.13,0.06,0.25,0.15,0.36,0.27c0.11,0.13,0.21,0.29,0.28,0.49 c0.07,0.2,0.11,0.45,0.11,0.76c0,0.45,0.03,0.87,0.1,1.24c0.07,0.37,0.17,0.64,0.31,0.79h-1.41c-0.1-0.17-0.16-0.35-0.17-0.55 c-0.02-0.2-0.03-0.4-0.03-0.58c0-0.35-0.02-0.66-0.06-0.91c-0.04-0.26-0.12-0.47-0.23-0.64c-0.11-0.17-0.26-0.29-0.46-0.37 c-0.19-0.08-0.44-0.12-0.74-0.12h-1.94v3.18h-1.32V49.14z M250.69,56.85h1.32v-7.72h-1.32V56.85z M230.75,49.14h5.19v1.17h-3.87 v2.02h3.4v1.1h-3.4v3.43h-1.32V49.14z M191.73,56.85h1.36l1.54-5.9h0.02l1.51,5.9h1.34l2.07-7.72h-1.34l-1.4,5.9h-0.02l-1.47-5.9 h-1.35l-1.52,5.9h-0.02l-1.36-5.9h-1.34L191.73,56.85z M171.57,53.78h2.29l-1.12-3.32h-0.03L171.57,53.78z M172.04,49.14h1.4 l2.89,7.72h-1.41l-0.7-2.04h-3l-0.7,2.04h-1.36L172.04,49.14z M150.13,56.85h5.14v-1.17h-3.82v-6.55h-1.32V56.85z M23.22,19.06 c-1.96-1.89-4.47-2.58-6.88-3.04c-0.4-0.08-0.81-0.15-1.21-0.22c-1.46-0.26-2.83-0.5-4.08-0.97c-1.05-0.4-2.3-1.21-2.3-2.87 c0-2.14,2.26-3.64,5.51-3.64c2.46,0,4.69,0.84,5.83,2.19l1.65,1.96l3.82-3.38l-1.65-1.96c-2.1-2.5-5.7-3.99-9.64-3.99 C8.14,3.15,3.7,6.86,3.7,11.96c0,3.52,2.1,6.4,5.6,7.73c1.67,0.63,3.34,0.93,4.95,1.21l0.1,0.02c0.35,0.06,0.7,0.12,1.05,0.19 c1.55,0.3,3.29,0.7,4.35,1.72c0.85,0.83,1.31,1.88,1.21,2.82c-0.32,3.02-4.19,4.12-6.72,4.12v5.18c5.2,0,11.09-2.73,11.73-8.74 C26.26,23.63,25.25,21.02,23.22,19.06 M181.1,19.05h-5.04c0-5.91-4.68-10.72-10.44-10.72s-10.44,4.81-10.44,10.72 c0,5.91,4.68,10.72,10.44,10.72v5.18c-8.54,0-15.49-7.13-15.49-15.9c0-8.77,6.95-15.9,15.49-15.9S181.1,10.28,181.1,19.05 M202.94,34.95c-1.39,0-2.52-1.16-2.52-2.59V3.15h5.04v26.63h15.85v5.18H202.94z M66.47,3.15v31.8h-5.04V21.64H45.35v-5.18h16.08 V3.15H66.47z M126.64,17.54c1.14-1.56,1.76-3.44,1.76-5.39c0-4.96-3.93-9-8.76-9h-9.48v5.18h9.48c2.05,0,3.72,1.71,3.72,3.82 s-1.67,3.82-3.72,3.82h-9.48v5.18h11.4c2.32,0,4.2,1.93,4.2,4.32c0,2.38-1.89,4.31-4.2,4.31h-11.4v5.18h11.4 c5.1,0,9.24-4.26,9.24-9.49C130.81,22.26,129.23,19.29,126.64,17.54 M90.84,3.15H85.8v31.8h5.04V3.15z M281.09,8.33h25.21V3.15 h-25.21V8.33z M296.21,34.95h-5.04V13.5h5.04V34.95z M243.03,34.95h20.89v-5.18h-20.89V34.95z">
+              </path>
+            </svg>
+          </a>
+          <address>
+            <a class="footer-link"
+              href="https://www.waze.com/live-map/directions/il/%D7%9E%D7%97%D7%95%D7%96-%D7%AA%D7%9C-%D7%90%D7%91%D7%99%D7%91/%D7%AA%D7%9C-%D7%90%D7%91%D7%99%D7%91-%D7%99%D7%A4%D7%95/%D7%A9%D7%91%D7%9C%D7%AA-%D7%95%D7%A9%D7%95%D7%AA-%D7%A2%D7%95%D7%A8%D7%9B%D7%99-%D7%93%D7%99%D7%9F?to=place.ChIJH7T057hMHRUROf9U0v41IA0&from=ll.31.9935006%2C34.7462354&utm_medium=lm_share_directions&utm_campaign=default&utm_source=waze_website"
+              target="_blank">
+              <ion-icon name="navigate-outline"></ion-icon>
+              <span>Yitzhak Sadeh St 4, Tel Aviv-Yafo, 6777504</span>
+            </a>
+            <a class="footer-link" href="tel:+9723307500">
+              <ion-icon name="call-outline"></ion-icon>
+              <span>+972-3-307-5000</span>
+            </a>
+            <a class="footer-link" href="mailto:marketingteam@shibolet.com">
+              <ion-icon name="mail-outline"></ion-icon>
+              <span>marketingteam@shibolet.com</span>
+            </a>
+          </address>
+
+        </div>
+        <iframe class="footer-map"
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13524.573980855534!2d34.7849193!3d32.0653674!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d4cb8e7f4b41f%3A0xd2035fed254ff39!2z16nXkdec16og15XXqdeV16onINei15XXqNeb15kg15PXmdef!5e0!3m2!1sen!2sil!4v1716900713519!5m2!1sen!2sil"
+          style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        <a class="footer-btn" href="https://www.shibolet.com/en/landing_pages/newsletter/" target="_blank">stay tuned
+          subscribe to our newsletter</a>
+
+        <ul class="social-links">
+          <li class="social-link">
+            <a href="https://www.linkedin.com/company/107846/admin/feed/posts/">
+              <ion-icon name="logo-linkedin"></ion-icon>
+              <span>linkedin</span>
+            </a>
+          </li>
+          <li class="social-link">
+            <a href="https://www.facebook.com/ShiboletLaw">
+              <ion-icon name="logo-facebook"></ion-icon>
+              <span>facebook</span>
+            </a>
+          </li>
+          <li class="social-link">
+            <a href="https://www.instagram.com/lifeatshibolet/">
+              <ion-icon name="logo-instagram"></ion-icon>
+              <span>instagram</span>
+            </a>
+          </li>
+          <li class="social-link">
+            <a href="https://www.youtube.com/channel/UC-5TPIK18HV_ODTWxIgj4YQ">
+              <ion-icon name="logo-youtube"></ion-icon>
+              <span>youtube</span>
+            </a>
+          </li>
+        </ul>
+        <p class="copyright">
+          &copy; <span class="year">2024</span> Shibolet & Co.
+        </p>
+        <p class="credit">Designed and created by <a class="credit-link"
+            href="https://www.linkedin.com/in/meital-zamir-65575660/" target="_blank">Meital Zamir</a></p>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
+
+</html>
